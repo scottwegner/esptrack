@@ -68,6 +68,7 @@ header('Cache-Control: no-cache');
 		$new_data = "left:10px;top:10px;";
    }
 
+// for troubleshooting I have it print the bit of css info returned in text on the top of the page
 echo "data:".$new_data."\n\n";
 flush();
 
