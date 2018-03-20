@@ -1,4 +1,5 @@
 <?php
+
 //streaming code
 
 header('Content-Type: text/event-stream');
@@ -7,12 +8,7 @@ header('Cache-Control: no-cache');
 // below is from ajax code
         require 'espconnect.php';
         $result = mysqli_query($con,"SELECT macAddr FROM `location` ORDER BY time DESC LIMIT 0,1");
-//      $result = mysqli_query($con,"SELECT location FROM names WHERE name = 'Alex'");
         $row = mysqli_fetch_assoc($result);
-
-//      echo 'test';
-//      echo $row[mac];
-//      echo $_POST['name'];
 
 // This next bit was put in to see if I could operate on the data before it is returned.
 
@@ -70,15 +66,7 @@ header('Cache-Control: no-cache');
 		$new_data = "left:260px;top:160px;";
    }	else {
 		$new_data = "left:10px;top:10px;";
-//		$new_data = $row[macAddr];
    }
-
-//        echo (mysqli_num_rows($result) !== 0) ? $row[location] : "Not Found";
-
-//generate random number for demonstration
-//$new_data = rand(0, 900);
-//$new_data = $row[mac];
-//echo the new number
 
 echo "data:".$new_data."\n\n";
 flush();
